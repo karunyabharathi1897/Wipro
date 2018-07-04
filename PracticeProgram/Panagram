@@ -1,0 +1,54 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package aaa;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Dell
+ */
+public class Panagram {
+     public static void main(String[] args) {
+        // TODO code application logic here
+        Scanner sc=new Scanner(System.in);
+        String str=sc.nextLine();
+        int m[]=new int[26];
+        int intex=0;
+        int flag=0;
+        for(int i=0;i<str.length();i++)
+        {
+            if('A'<=str.charAt(i) && str.charAt(i)<='Z')
+            {
+                intex=str.charAt(i)-'A';
+            }
+            else if(str.charAt(i)>='a' && str.charAt(i)<='z')
+            {
+                intex=str.charAt(i)-'a';
+            }
+            m[intex]=1;
+        }
+        for(int i=0;i<26;i++)
+        {
+            if(m[i]!=1)
+            {
+                flag=1;
+                //System.out.println("gdf");
+                break;
+            }
+        }
+        if(flag==0)
+        {
+            System.out.println(" all letters are present");
+        }
+        else
+        {
+            System.out.println(" not All letters are present");
+        }
+        
+    }
+    
+}
