@@ -1,0 +1,75 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package linkedlist;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Dell
+ */
+class  node
+{
+    int data;
+    node next;
+    node(int d)
+    {
+        data=d;
+        next=null;
+    }
+}
+class Link2
+{
+    node head;
+    public void push(int d)
+    {
+        
+        node newnode=new node(d);
+        newnode.next=head;
+        head=newnode;
+    }
+    public void found(node head,int k)
+    {
+        node temp=head;
+        int c=0;
+        while(temp!=null)
+        {
+            c+=1;
+            temp=temp.next;
+        }
+        temp=head;
+        int y=c-k;
+        if(y==0)
+        {
+            System.out.println(temp.data);
+        }
+        for(int i=1;i<=y;i++)
+        {
+            temp=temp.next;
+            if(i==y)
+            {
+                System.out.println(temp.data);
+            }
+        }
+    }
+}
+public class Nth_node_from_end {
+    public static void main(String[] args) {
+        //int c=0;
+        Link2 list=new Link2();
+        list.push(17);
+        list.push(34);
+        list.push(23);
+        list.push(94);
+        list.push(8);
+        list.push(3);
+        
+        System.out.println("enter node to be print from last");
+        Scanner sc=new Scanner(System.in);
+        int k=sc.nextInt();
+       list.found(list.head,k);
+    }
+}
