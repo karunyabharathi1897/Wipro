@@ -1,0 +1,58 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package aaa;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Dell
+ */
+public class W1 {
+    public static void fun(int x,int a)
+    {
+        int sum=0,r=0;
+        //int a=0;
+        int i=0;
+         if(x<0){
+               a=-1;
+             // System.out.println("hy");
+        }
+        int n=Math.abs(x);
+        while(n!=0)
+        {
+            r=n%10;
+            sum=sum+r;
+            n=n/10;
+        }
+        if(sum>=0 && sum<=9)
+        {
+            if(a<0)
+            {
+                i++;
+                System.out.println("-"+sum);
+                //System.out.println("ko");
+            }
+            else
+            {
+                System.out.println(sum);
+              // System.out.println("ji");
+            }
+        }
+        else
+        {
+            fun(sum,a);
+            //System.out.println("ml");
+        }
+    }
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int num=sc.nextInt();
+        int a=0;
+        fun(num,a);
+        
+    }
+}
