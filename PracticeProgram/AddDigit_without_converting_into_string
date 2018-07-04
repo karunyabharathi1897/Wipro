@@ -1,0 +1,92 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package aaa;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Dell
+ */
+public class Add_digit {
+    public static void fun(String str,String str1,int n)
+    {
+        int sum=0,b=0,j=0,h=0,r=0;
+        int c=0;
+       String g="";
+        for(int i=n-1;i>=0;i--)
+        {
+            int k=0,w=0;
+            sum=0;b=0;
+     
+            String f=""+str.charAt(i);
+            String q=""+str1.charAt(i);
+            sum=c+Integer.valueOf(f)+Integer.valueOf(q);
+            String v=""+String.valueOf(sum);
+             b=v.length();
+            if(b==2)
+            {
+                String u=""+v.charAt(0);
+                c=Integer.valueOf(u);
+                g=g+v.charAt(1);
+            }
+            else if(b==1)
+            {
+                g=g+v.charAt(0);
+                c=0;
+            }
+            
+        }
+        if(c!=0)
+        {
+            g=g+String.valueOf(c);
+        }
+       for(int i=g.length()-1;i>=0;i--)
+       {
+           System.out.print(g.charAt(i));
+       }
+                
+    }
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        String str=sc.nextLine();
+        String str1=sc.nextLine();
+        StringBuilder s=new StringBuilder();
+        int n=str.length();
+        int m=str1.length();
+        int t=0;
+        String st="";
+        String st1="";
+        if(n>m)
+        {
+            int z=n-m;
+            while(t<z)
+            {
+                s.append('0');
+                t++;
+            }
+            s.append(str1);
+            st1=s.toString();
+            fun(st1,str,n);
+        }
+        else if(m>n)
+        {
+            int z=m-n;
+            while(t<z)
+            {
+               s.append('0'); 
+               t++;
+            }
+            s.append(str);
+            st=s.toString();
+            fun(st,str1,m);
+        }
+        else
+        {
+            fun(str,str1,m);
+        }
+   }
+}
