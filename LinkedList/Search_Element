@@ -1,0 +1,66 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package linkedlist;
+
+/**
+ *
+ * @author Dell
+ */
+class Node
+{
+    int data;
+    Node next;
+    Node(int d)
+    {
+        data=d;
+        next=null;
+    }
+}
+class Linkedlist
+{
+    Node head;
+    public void push(int d)
+    {
+        Node newnode=new Node(d);
+        newnode.next=head;
+        head=newnode;
+        
+    }
+    public boolean search(Node head,int n)
+    {
+        Node temp=head;
+        while(temp!=null)
+        {
+            if(temp.data==n)
+            {
+                return true;
+                
+            }
+            
+            temp=temp.next;
+        }
+        return false;
+    }
+}
+public class search_element {
+    public static void main(String[] args) {
+        Linkedlist llist=new Linkedlist();
+        llist.push(28);
+        llist.push(23);
+        llist.push(45);
+        //System.out.println("hello");
+        if(llist.search(llist.head,13))
+        {
+            System.out.println("present");
+        }
+        else
+        {
+            System.out.println("Not present");
+        }
+    
+    }
+    
+}
