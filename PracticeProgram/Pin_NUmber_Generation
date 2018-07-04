@@ -1,0 +1,72 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package aaa;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Dell
+ */
+public class Pin_number {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int t=0,s,r=0,i=0,z=0;
+        int a[]=new int[10];
+        int b[]=new int[4];
+        while(t<3)
+        {
+            s=sc.nextInt();
+            if(s>=100 && s<=999)
+            {
+                while(s!=0)
+                {
+                    r=s%10;
+                    //System.out.print(r);
+                    a[i++]=r;
+                    s=s/10;
+                    //System.out.print(a[i]);
+                }
+            }
+            else
+            {
+                break;
+            }
+            t++;
+        }
+        int min;
+        for(int j=0;j<3;j++)
+        {
+            min=999;
+            for(int k=j;k<i;k=k+3)
+            {
+                if(min>a[k])
+                {
+                    min=a[k];
+                   
+                }
+                
+            }
+             //System.out.print(min);
+            b[z++]=min;
+        }
+        int max=0;
+        for(int k=0;k<i;k++)
+        {
+            if(max<a[k])
+            {
+                max=a[k];
+                //System.out.println(max);
+            }
+        }
+        b[z++]=max;
+        System.out.println("");
+        for(int k=z-1;k>=0;k--)
+        {
+            System.out.print(b[k]);
+        }
+    }
+}
