@@ -1,0 +1,64 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package aaa;
+
+import java.util.Scanner;
+
+
+public class  Sum_of_char
+{
+    public static void count(int m[],char a[],int k)
+    {
+        int sum=0,intex=0;
+        for(int i=0;i<k;i++)
+        {
+            if(a[i]>='a' ||a[i]<='z')
+            {
+                intex=a[i]-'a';
+            }
+            else if(a[i]>='A'||a[i]<='Z')
+            {
+                intex=a[i]-'A';
+            }
+            m[intex]=1;
+        }
+        for(int i=1;i<=26;i++)
+        {
+            if(m[i]==1)
+            {
+                sum=sum+i;
+            }
+        }
+        System.out.println(sum);    
+    }
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        String str=sc.nextLine();
+        int n=sc.nextInt();
+        int k=str.length();
+        int m[]=new int[26];
+        char a[]=str.toCharArray();
+        if(n==0)
+        {
+            for(int i=0;i<k;i++)
+            {
+                if(a[i]=='a'||a[i]=='e'||a[i]=='i'||a[i]=='o'||a[i]=='u'||a[i]=='A'||a[i]=='E'||a[i]=='I'||a[i]=='O'||a[i]=='U')
+                {
+                    a[i]='*';
+                }
+                    
+            }
+            count(m,a,k);
+        }
+        else
+        {
+            count(m,a,k);
+        }
+    }
+            
+}
+    
+
