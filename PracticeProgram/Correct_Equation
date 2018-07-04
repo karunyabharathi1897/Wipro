@@ -1,0 +1,67 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package aaa;
+
+/**
+ *
+ * @author Dell
+ */
+public class Correct_Equation {
+      public static void main(String[] args) {
+       java.util.Scanner sc=new java.util.Scanner(System.in);
+        String str=sc.nextLine();
+        String j="";
+        //String k="";
+       // String h="";
+       // int k=0;
+        for(int i=0;i<str.length();i++)
+        {
+           
+            if(str.charAt(i)!='+'&& str.charAt(i)!='-'&& str.charAt(i)!='*'&& str.charAt(i)!='/'&&str.charAt(i)!='=')
+            {
+               j=j+str.charAt(i);
+              // k++;
+               // System.out.println(str.charAt(i));
+            }
+            else
+            {
+                j=j+'@';
+               // System.out.println(j);
+            }
+        }
+         // System.out.println(str.charAt(1));
+          //System.out.println(j);
+        String str1[]=j.split("@");
+        int a=0;
+        int b=0;
+        int c=0;
+        a=Integer.valueOf(str1[0]);
+        b=Integer.valueOf(str1[1]);
+        c=Integer.valueOf(str1[2]);
+         System.out.println("The correct equation is:");
+        if(a/b==c)
+        {
+            System.out.println(a+"/"+b+"="+c);
+           // System.out.println(a*b);
+        }
+        else if(a+b==c)
+        {
+            System.out.println(a+"+"+b+"="+c);
+        }
+        else if(a-b==c)
+        {
+            System.out.println(a+"-"+b+"="+c);
+        }
+         else if(a*b==c)
+        {
+           // System.out.println(a*b);
+            System.out.println(a+"*"+b+"="+c);
+        }
+        
+        
+       
+    }
+}
