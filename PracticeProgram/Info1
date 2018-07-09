@@ -1,0 +1,43 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package aj;
+
+/**
+ *
+ * @author skcet
+ */
+public class Str {
+    public static void main(String[] args) {
+        String st="GCTAG";
+        StringBuilder s=new StringBuilder(st);
+        StringBuilder sw=s.reverse();
+        String h=sw.toString();
+        int n=h.length();
+        char a[]=h.toCharArray();
+        String q="";
+        for(int i=0;i<n;i++)
+        {
+            if(a[i]=='G')
+            {
+                q=q+'C';
+            }
+            else if(a[i]=='C')
+            {
+                q=q+'G';
+            }
+            else if(a[i]=='A')
+            {
+                q=q+'T';
+                
+            }
+            else if(a[i]=='T')
+            {
+                q=q+'A';
+            }
+        }
+        System.out.println(q);
+    }
+}
