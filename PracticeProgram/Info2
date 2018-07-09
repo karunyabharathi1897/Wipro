@@ -1,0 +1,82 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package aj;
+
+import static aj.Test.maxCandies;
+import java.util.ArrayList;
+
+/**
+ *
+ * @author skcet
+ */
+public class Faa {
+    static void maxCandies(ArrayList<Integer> bags, long candiesLimit) {
+        int tem[]=new int[100];
+        int a[]=new int[100];
+        int i=0,u=0,h=1,sum=0;
+        long z=candiesLimit;
+        for(Integer x:bags)
+        {
+            u=u+x;
+            tem[i]=x;
+            i++;
+        }
+        a[0]=u;
+        for(int j=0;j<i;j++)
+        {
+            sum=0;
+            for(int k=0;k<i;k++)
+            {
+                if(j!=k)
+                {
+                    sum=sum+tem[k];
+                    
+                }
+            }
+            //System.out.println(sum);
+            a[h]=sum;
+            h++;
+        }
+        int t=0;
+        for(int q=0;q<h;q++)
+        {
+            for(int j=0;j<h;j++)
+            {
+                if(a[q]<a[j])
+                {
+                    t=a[q];
+                    a[q]=a[j];
+                    a[j]=t;
+                            
+                }
+            }
+        }
+        int p=0;
+        for(int j=0;j<h;j++)
+        {
+            if(a[j]<=z)
+            {
+                p=j;
+            }
+        }
+        int max=a[p];
+        if(max>z)
+        {
+            max=a[p+1]-max;
+        }
+        System.out.println(max);
+    }
+     public static void main(String[] args) {
+        ArrayList<Integer> bags=new ArrayList<Integer>();
+        bags.add(11);
+        bags.add(2);
+        bags.add(4);
+        bags.add(5);
+        maxCandies(bags,10);
+        //System.out.println(x);
+}
+}
+     
