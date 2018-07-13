@@ -1,0 +1,47 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package prp;
+import java.util.*;
+/**
+ *
+ * @author skcet
+ */
+public class id {
+    public static boolean fun(int i,int m,int n)
+    {
+        if(i==0 &&m!=i && n!=i)
+        {
+            return false;
+        }
+        int k=0;
+        while(i>0)
+        {
+            k=i%10;
+            if(k!=m && k!=n)
+            {
+                return false;
+            }
+            i=i/10;
+        }
+        return true;
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+       // int k = sc.nextInt();
+        int m=sc.nextInt();
+        int n=sc.nextInt();
+        for(int i=0;i<10000;i++)
+        {
+            if(fun(i,m,n))
+            {
+                System.out.print(i+" ");
+            }
+        }
+        
+}
+
+    
+}
